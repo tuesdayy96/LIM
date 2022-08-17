@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+@import '_var.scss';
+
+:root{
+    background-color : $bg;
+}
+
+#wrap{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.background{
+    position: fixed;
+    z-index: 100;
+    left: $pad;
+    top: $pad;
+    right: $pad;
+    bottom: $pad;
+    .waters{
+        width: 100%;
+        height: 100%;
+    }
+}
+.frame{
+    position: fixed;
+    z-index: 3;
+    left: $pad;
+    top: $pad;
+    right: $pad;
+    bottom: $pad;
+    div{
+        background-color: #000;
+        position: absolute;
+        opacity: 0.5;
+    }
+    &-top{
+        top: 0;
+        width: 100%;
+        height: 1px;
+    }
+    &-left{
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 1px;
+    }
+    &-right{
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 1px;
+    }
+    &-bottom{
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+    }
+}
+.header{
+    position: absolute;
+    left: $pad;
+    top: $pad;
+    right: $pad;
+    bottom: $pad;
+    z-index: 100;
+}
