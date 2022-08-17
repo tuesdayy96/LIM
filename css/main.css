@@ -12,15 +12,11 @@
 
 .background {
   position: fixed;
-  z-index: 100;
+  z-index: 1;
   left: max(20px, 3vmin);
   top: max(20px, 3vmin);
   right: max(20px, 3vmin);
   bottom: max(20px, 3vmin);
-}
-.background .waters {
-  width: 100%;
-  height: 100%;
 }
 
 .frame {
@@ -63,7 +59,64 @@
   position: absolute;
   left: max(20px, 3vmin);
   top: max(20px, 3vmin);
+  z-index: 6;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.header h2 {
+  font-size: 2rem;
+}
+.header ul {
+  margin-top: 20px;
+}
+.header ul li {
+  font-weight: 700;
+  margin: 20px 5px;
+  cursor: pointer;
+}
+
+.pages {
+  position: fixed;
+  left: max(20px, 3vmin);
+  top: max(20px, 3vmin);
   right: max(20px, 3vmin);
   bottom: max(20px, 3vmin);
-  z-index: 100;
+  z-index: 5;
+}
+.pages .home {
+  position: absolute;
+  bottom: max(20px, 3vmin);
+  right: max(20px, 3vmin);
+}
+.pages .home span {
+  display: block;
+}
+.pages .project {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  transform: translateY(-50%);
+  right: max(20px, 3vmin);
+  font-size: 30px;
+}
+.pages .project li {
+  margin: 20px;
+}
+.pages .info {
+  position: absolute;
+  z-index: 6;
+  bottom: max(20px, 3vmin);
+  left: max(20px, 3vmin);
+}
+.pages .contact {
+  position: absolute;
+  z-index: 6;
+  top: max(20px, 3vmin);
+  right: max(20px, 3vmin);
+}
+.pages .contact img {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  vertical-align: bottom;
 }

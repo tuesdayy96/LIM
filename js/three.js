@@ -2,11 +2,11 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'GLTFLoader'
 import { OrbitControls } from 'OrbitControls';
 import { Water} from 'Water2';
+import { TextureLoader } from 'three';
 
 class Background{
     constructor(){
         const back = document.querySelector('.background');
-        back.Background = new THREE.Color(0xfff9cb)
         this._back = back;
 
         const renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
@@ -45,42 +45,25 @@ class Background{
     }
     
     _setupLight() {
+        const d_light = new THREE.DirectionalLight({color:0xffffff,intencity:0.7});
         const light = new THREE.AmbientLight({color:0xffffff,intencity:1});
         this._camera.add(light);
+        this._scene.add(d_light);
     }
     _setupModel() {
-        // const groundGeometry = new THREE.PlaneGeometry(20,20);
-	    // const groundMaterial = new THREE.MeshStandardMaterial( { roughness: 0.8, metalness: 0.4, color: 0x818181} );
-		// const ground = new THREE.Mesh( groundGeometry, groundMaterial );
-        // ground.rotation.x = Math.PI * - 0.5;
-		// ground.position.x = -10
-		// this._scene.add( ground );
-        // this._ground = ground;
-
-		// const textureLoader = new THREE.TextureLoader();
-		// textureLoader.load( 'img/grain.webp',
-        //  function ( map ) {
-		// 	map.wrapS = THREE.RepeatWrapping;
-		// 	map.wrapT = THREE.RepeatWrapping;
-		// 	map.anisotropy = 16;
-		// 	map.repeat.set( 4, 10 );
-		// 	groundMaterial.map = map;
-		// 	groundMaterial.needsUpdate = true;
-		// }
-        // );
-
         
-
         const waterGeomatry = new THREE.SphereGeometry(30,60,60);
-        const water = new Water(waterGeomatry,{color:'#ffffff',scale:2,flowDirection:new THREE.Vector3(1,1),
-        textureWidth: 1024,
-        textureHeight: 1024});
+        const flowmap = new THREE.TextureLoader().load('textures/water/Water_1_M_Flow.jpg')
+        const water = new Water(waterGeomatry,{
+            color:'#ffffff',
+            scale:2,
+            textureWidth: 1024,
+            textureHeight: 1024,
+            flowmap : flowmap
+        });
         water.position.x = -10;
         this._water = water;
-		// water.rotation.x = Math.PI * - 0.5;
         this._scene.add(water);
-        // const blurloader = new THREE.TextureLoader();
-        // blurloader.load('img/blur.webp');
 
         const lineMate = new THREE.MeshBasicMaterial({color:'#fff'});
         const line = new THREE.LineSegments(new THREE.WireframeGeometry(waterGeomatry),lineMate);

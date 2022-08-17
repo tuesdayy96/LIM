@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIM</title>
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/reset.css">
     <script type="importmap">
@@ -17,7 +18,10 @@
             }
           }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script type="module" src="js/three.js" defer></script>
+    <script src="js/main.js"></script>
+
 </head>
 <body>
     <div id="wrap">
@@ -32,14 +36,59 @@
             <h2>LIM<br>JEOUNGGYU</h2>
             <span>Front End & Developer</span>
             <ul class="list">
-                <li>HOME</li>
-                <li>PROJECT</li>
+                <li class="on">HOME</li>
+                <li>PROJECTS</li>
                 <li>INFO</li>
                 <li>CONTACT</li>
             </ul>
         </div>
-
+        <div class="pages">
+            <div class="home">
+                <span>1996,Born in ANSAN,<br>Republic of Korea</span>
+                <span>Lorem, ipsum dolor.</span>
+                <span>sit amet consectetur adipisicing elit.</span>
+                <span>Nesciunt quas possimus fugiat corrupti,</span>
+                <span>suscipit non repellat sed hic minima error?</span>
+            </div>
+            <div class="project">
+                <ul>
+                    <li v-for="item in myProject"><a href="#">{{item}}</a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <ul>
+                    <li>
+                        <h4>HTML</h4>
+                        <progress min="0" max='100' value=""></progress>
+                    </li>
+                    <li>
+                        <h4>CSS</h4>
+                        <progress min="0" max='100' value=""></progress>
+                    </li>
+                    <li>
+                        <h4>JAVASCRIPT</h4>
+                        <progress min="0" max='100' value=""></progress>
+                    </li>
+                    <li>
+                        <h4>JQUERY</h4>
+                        <progress min="0" max='100' value=""></progress>
+                    </li>
+                    <li>
+                        <h4>THREE.js</h4>
+                        <progress min="0" max='100' value=""></progress>
+                    </li>
+                    <li>
+                        <h4>VUE.js</h4>
+                        <progress min="0" max='100' value=""></progress>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact">
+                <p><a href=""><img src="img/instaColor.png" alt=""><span>INSTAGRAM</span></a></p>
+                <span>E-mail : wjdrb1996@gmail.com</span>
+            </div>
+        </div>
     </div>
-    <script src="js/main.js"></script>
+    
 </body>
 </html>
