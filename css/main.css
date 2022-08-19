@@ -102,6 +102,9 @@
 .pages .project li {
   margin: 20px;
 }
+.pages .project a {
+  font-weight: 800;
+}
 .pages .info {
   position: absolute;
   z-index: 6;

@@ -18,10 +18,9 @@
             }
           }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script type="module" src="js/three.js" defer></script>
-    <script src="js/main.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -35,10 +34,10 @@
         <div class="header">
             <h2>LIM<br>JEOUNGGYU</h2>
             <span>Front End & Developer</span>
-            <ul class="list">
+            <ul class="list" id="list">
                 <li class="on">HOME</li>
                 <li>PROJECTS</li>
-                <li>INFO</li>
+                <li @click="show">INFO</li>
                 <li>CONTACT</li>
             </ul>
         </div>
@@ -52,7 +51,7 @@
             </div>
             <div class="project">
                 <ul>
-                    <li v-for="item in myProject"><a href="#">{{item}}</a></li>
+                    <li v-for="(item,index) in myProjects"><a href="">{{item}}</a></li>
                 </ul>
             </div>
             <div class="info">
@@ -89,6 +88,6 @@
             </div>
         </div>
     </div>
-    
+    <script src="js/main.js"></script>
 </body>
 </html>
