@@ -35,57 +35,65 @@
             <h2>LIM<br>JEOUNGGYU</h2>
             <span>Front End & Developer</span>
             <ul class="list" id="list">
-                <li class="on">HOME</li>
-                <li>PROJECTS</li>
-                <li @click="show">INFO</li>
-                <li>CONTACT</li>
+                <li @click="showHome" class="on">HOME</li>
+                <li @click="showPro">PROJECTS</li>
+                <li @click="showInfo">INFO</li>
+                <li @click="showCon">CONTACT</li>
             </ul>
         </div>
         <div class="pages">
-            <div class="home">
-                <span>1996,Born in ANSAN,<br>Republic of Korea</span>
-                <span>Lorem, ipsum dolor.</span>
-                <span>sit amet consectetur adipisicing elit.</span>
-                <span>Nesciunt quas possimus fugiat corrupti,</span>
-                <span>suscipit non repellat sed hic minima error?</span>
-            </div>
-            <div class="project">
+            <transition>
+                <div v-if="isHome" class="home">
+                    <span>1996,Born in ANSAN,<br>Republic of Korea</span>
+                    <span>Lorem, ipsum dolor.</span>
+                    <span>sit amet consectetur adipisicing elit.</span>
+                    <span>Nesciunt quas possimus fugiat corrupti,</span>
+                    <span>suscipit non repellat sed hic minima error?</span>
+                </div>
+            </transition>
+            <transition>
+            <div v-if="isProject" class="project">
                 <ul>
                     <li v-for="(item,index) in myProjects"><a href="">{{item}}</a></li>
                 </ul>
             </div>
-            <div class="info">
+            </transition>
+            <transition>
+            <div v-if="isInfo" class="info">
                 <ul>
                     <li>
                         <h4>HTML</h4>
-                        <progress min="0" max='100' value=""></progress>
+                        <div class="skill"></div>
                     </li>
                     <li>
                         <h4>CSS</h4>
-                        <progress min="0" max='100' value=""></progress>
+                        <div class="skill"></div>
                     </li>
                     <li>
                         <h4>JAVASCRIPT</h4>
-                        <progress min="0" max='100' value=""></progress>
+                        <div class="skill"></div>
                     </li>
                     <li>
                         <h4>JQUERY</h4>
-                        <progress min="0" max='100' value=""></progress>
+                        <div class="skill"></div>
                     </li>
                     <li>
                         <h4>THREE.js</h4>
-                        <progress min="0" max='100' value=""></progress>
+                        <div class="skill"></div>
                     </li>
                     <li>
                         <h4>VUE.js</h4>
-                        <progress min="0" max='100' value=""></progress>
+                        <div class="skill"></div>
                     </li>
                 </ul>
             </div>
-            <div class="contact">
+            </transition>
+            <transition>
+            <div v-if="isContact" class="contact">
                 <p><a href=""><img src="img/instaColor.png" alt=""><span>INSTAGRAM</span></a></p>
                 <span>E-mail : wjdrb1996@gmail.com</span>
             </div>
+            </transition>
         </div>
     </div>
     <script src="js/main.js"></script>

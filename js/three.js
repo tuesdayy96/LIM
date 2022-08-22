@@ -52,7 +52,7 @@ class Background{
     }
     _setupModel() {
         
-        const waterGeomatry = new THREE.SphereGeometry(30,60,60);
+        const waterGeomatry = new THREE.SphereGeometry(40,60,60);
         const flowmap = new THREE.TextureLoader().load('textures/water/Water_1_M_Flow.jpg')
         const water = new Water(waterGeomatry,{
             color:'#ffffff',

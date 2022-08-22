@@ -111,10 +111,30 @@
   bottom: max(20px, 3vmin);
   left: max(20px, 3vmin);
 }
+.pages .info li {
+  margin: 10px 0;
+}
+.pages .info .skill {
+  width: 10em;
+  height: 10px;
+  margin: 5px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+.pages .info .skill::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: #000;
+  border-radius: 10px;
+}
 .pages .contact {
   position: absolute;
   z-index: 6;
-  top: max(20px, 3vmin);
+  top: 60%;
   right: max(20px, 3vmin);
 }
 .pages .contact img {
@@ -122,4 +142,13 @@
   width: 20px;
   height: 20px;
   vertical-align: bottom;
+}
+
+.v-enter-active, .v-leave-active {
+  transition: 1s;
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
+  transform: translateY(48px);
 }

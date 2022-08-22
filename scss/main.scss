@@ -110,11 +110,31 @@
         z-index: 6;
         bottom: $pad;
         left: $pad;
+        li{
+            margin: 10px 0;
+        }
+        .skill{
+            width:10em;
+            height: 10px;
+            margin: 5px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            position:relative;
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                width:10px;
+                height: 100%;
+                background-color: #000;
+                border-radius: 10px;
+            }
+        }
     }
     .contact{
         position: absolute;
         z-index: 6;
-        top:$pad;
+        top:60%;
         right: $pad;
         img{
             display: inline;
@@ -123,4 +143,12 @@
             vertical-align: bottom;
         }
     }
+}
+
+.v-enter-active,.v-leave-active{
+    transition: 1s;
+}
+.v-enter,.v-leave-to{
+    opacity: 0;
+    transform: translateY(48px);
 }
