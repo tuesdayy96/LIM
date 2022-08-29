@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkasap"]=self["webpackChunkasap"]||[]).push([[443],{974:function(a,r,e){e.r(r),e.d(r,{default:function(){return h}});var i=e(252);const l={class:"project"},n=(0,i.uE)('<ul><li><a href="">#1</a></li><li><a href="">#2</a></li><li><a href="">#3</a></li><li><a href="">#4</a></li><li><a href="">#5</a></li></ul>',1),u=[n];function f(a,r){return(0,i.wg)(),(0,i.iD)("div",l,u)}var s=e(744);const t={},c=(0,s.Z)(t,[["render",f]]);var h=c}}]);
+//# sourceMappingURL=about.fe6a641c.js.map
